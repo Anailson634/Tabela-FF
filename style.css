@@ -1,0 +1,53 @@
+.Time {    
+    display: flex;
+    margin: 10px;
+    width: 430px;}
+.colorTime {
+    display: flex;
+    border-radius: 10px 0px 10px 0px;
+    background-color: rgba(248, 40, 40, 0.815);
+}
+.tabela0 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 30px;
+}
+.tabela1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 30px;
+}
+.PtOpt {
+    margin: 2px;
+    border: 1px solid;
+    width: 100px;
+    background-color: rgba(0, 0, 0, 0.897);
+    border-radius: 10px 0px 10px 0px;
+}
+
+body {
+    background: linear-gradient(90deg, rgba(83, 1, 1, 0.87), rgb(0, 0, 0));
+    display: flex;
+    justify-content: center;
+}
+p {
+    color: white;
+}
+.baseName {
+    display: flex;
+    margin-left: 260px;
+    width: 170px;
+    height: 20px;
+    justify-content: space-between;
+}
+.nomeclature {
+    font-size: 14px;
+    display: flex;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+}
