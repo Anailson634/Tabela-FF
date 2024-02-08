@@ -1,0 +1,18 @@
+@media only screen and (max-width: 1200px) {
+
+    .tabela0 {
+        width: 20px;
+        height: 30px;
+    }
+    .tabela1 {
+        width: 140px;
+        height: 30px;
+    }
+    .PtOpt {
+        width: 80px;
+    }
+    .baseName {
+        margin-left: 190px;
+        width: 150px;
+    }
+}
