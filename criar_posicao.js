@@ -1,49 +1,62 @@
 var topicos=document.querySelector('.container')
+var quantidade=0
 
-var quantidade=2
-for (c=1;c<=quantidade;c++) {
-    let divTime=document.createElement('div')
-    divTime.className='Time'
+function carregar(){
+    quantidade=localStorage.getItem("Quantidade")
 
-    let divTabela=document.createElement('div')
-    divTabela.className='tabela0'
-    divTime.appendChild(divTabela)
+    for (c=1;c<=quantidade;c++) {
+        let divTime=document.createElement('div')
+        divTime.className='Time'
 
-    let pPosicao=document.createElement('p')
-    pPosicao.id='posicao'
-    pPosicao.innerText=`${c}º`
-    divTabela.appendChild(pPosicao)
+        let divTabela=document.createElement('div')
+        divTabela.className='tabela0'
+        divTime.appendChild(divTabela)
 
-    let divColor=document.createElement('div')
-    divColor.className="colorTime"
-    divTime.appendChild(divColor)
+        let pPosicao=document.createElement('p')
+        pPosicao.id='posicao'
+        pPosicao.innerText=`${c}º`
+        divTabela.appendChild(pPosicao)
 
-    let divNome=document.createElement('div')
-    divNome.className='tabela1'
-    divColor.appendChild(divNome)
+        let divColor=document.createElement('div')
+        divColor.className="colorTime"
+        divTime.appendChild(divColor)
 
-    let pName=document.createElement('p')
-    pName.innerText="None"
-    pName.id=`nomeLine${c}`
-    divNome.appendChild(pName)
+        let divNome=document.createElement('div')
+        divNome.className='tabela1'
+        divColor.appendChild(divNome)
 
-    let divKills=document.createElement('div')
-    divKills.className='tabela1 PtOpt'
-    divColor.appendChild(divKills)
+        let pName=document.createElement('p')
+        pName.innerText="None"
+        pName.id=`nomeLine${c}`
+        divNome.appendChild(pName)
 
-    let pkills=document.createElement('p')
-    pkills.id=`kills${c}`
-    pkills.innerText='00'
-    divKills.appendChild(pkills)
+        let divKills=document.createElement('div')
+        divKills.className='tabela1 PtOpt'
+        divColor.appendChild(divKills)
 
-    let divPontos=document.createElement('div')
-    divPontos.className='tabela1 PtOpt'
-    divColor.appendChild(divPontos)
+        let pkills=document.createElement('p')
+        pkills.id=`kills${c}`
+        pkills.innerText='00'
+        divKills.appendChild(pkills)
 
-    let pPontos=document.createElement('p')
-    pPontos.id=`pontuacao${c}`
-    pPontos.innerText="00"
-    divPontos.appendChild(pPontos)
+        let divPontos=document.createElement('div')
+        divPontos.className='tabela1 PtOpt'
+        divColor.appendChild(divPontos)
 
-    topicos.appendChild(divTime) 
+        let pPontos=document.createElement('p')
+        pPontos.id=`pontuacao${c}`
+        pPontos.innerText="00"
+        divPontos.appendChild(pPontos)
+
+        topicos.appendChild(divTime) 
+    }
+}
+function loade() {
+    carregar()
+    const lista_jgs=localStorage.getItem('Jogadores').split(",")
+
+    for (c=0;c<quantidade;c++){
+        let nome=document.querySelector(`#nomeLine${c+1}`)
+        nome.innerHTML=lista_jgs[c]
+    }
 }
