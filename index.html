@@ -10,21 +10,23 @@
     <textarea id="jogadores" cols="30" rows="10">
 
     </textarea>
-    <a href="painel.html">
-        <div id="Enviar" onclick="enviar()">
-            Enviar
-        </div>
-    </a>
+    <div id="Enviar" onclick="enviar_dados()">
+        Enviar
+    </div>
 
     <script>
         var jgs=document.querySelector("#jogadores")
         jgs.value=''
 
-        function enviar(){
-            localStorage.clear()
+        function enviar_dados() {
             const list_jgs=jgs.value.split('\n')
-            localStorage.setItem("Jogadores", list_jgs)
-            localStorage.setItem("Quantidade", list_jgs.length)
+            fetch("http://127.0.0.1:5000", {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({'Jogadores': list_jgs, "Quantidade": list_jgs.length})
+            })
         }
     </script>
 </body>

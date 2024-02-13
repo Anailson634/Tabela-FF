@@ -1,8 +1,12 @@
 var topicos=document.querySelector('.container')
 var quantidade=0
 
-function carregar(){
-    quantidade=localStorage.getItem("Quantidade")
+
+
+
+
+function criar_placar(qnt){
+    quantidade=qnt
 
     for (c=1;c<=quantidade;c++) {
         let divTime=document.createElement('div')
@@ -51,12 +55,16 @@ function carregar(){
         topicos.appendChild(divTime) 
     }
 }
-function loade() {
-    carregar()
-    const lista_jgs=localStorage.getItem('Jogadores').split(",")
-
-    for (c=0;c<quantidade;c++){
-        let nome=document.querySelector(`#nomeLine${c+1}`)
-        nome.innerHTML=lista_jgs[c]
-    }
+function ler_dados() {
+    
+    fetch("http://127.0.0.1:5000", method=['GET'])
+    .then(response => response.json())
+    .then(dados => {
+        //Manipular dados recebidos
+        criar_placar(dados['Quantidade'])
+        for (c=0;c<quantidade;c++){
+            let nome=document.querySelector(`#nomeLine${c+1}`)
+            nome.innerHTML=dados['Jogadores'][c]
+        }
+    })
 }
