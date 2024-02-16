@@ -1,0 +1,44 @@
+.botoesC {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+.botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 30px;
+    border: 1px solid;
+}
+#lista-De-Usuarios {
+    height: 200px;
+    width: 150px;
+    overflow: scroll;
+}
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#editContainer {
+    
+    border: 1px solid;          
+} #editTable {
+    display: flex;
+    border: 1px solid;
+} #editInput {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;            
+}
+input {
+    margin: 1px;
+}
+#editPartida > p {
+    margin: 15px 1px 1px 1px;
+} #editPartida {
+    display: flex;
+    flex-direction: column;
+}
