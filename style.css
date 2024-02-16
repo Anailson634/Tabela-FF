@@ -40,9 +40,7 @@ body {
     margin: 0;
     padding: 0;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
+
     display: flex;
     align-items: center;
     justify-content: center;
