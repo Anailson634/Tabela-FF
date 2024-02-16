@@ -11,7 +11,7 @@ p {
 .colorTime {
     display: flex;
     border-radius: 10px 0px 10px 0px;
-    background-color: rgba(248, 40, 40, 0.815);
+    background-color: rgba(4, 153, 66, 0.897)
 }
 .tabela0 {
     display: flex;
@@ -36,7 +36,13 @@ p {
 }
 
 body {
-    background: linear-gradient(90deg, rgba(83, 1, 1, 0.87), rgb(0, 0, 0));
+    background: url("/fundo.jpeg");
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;

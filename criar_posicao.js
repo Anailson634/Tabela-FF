@@ -1,10 +1,6 @@
 var topicos=document.querySelector('.container')
 var quantidade=0
 
-
-
-
-
 function criar_placar(qnt){
     quantidade=qnt
 
@@ -47,10 +43,20 @@ function criar_placar(qnt){
         divPontos.className='tabela1 PtOpt'
         divColor.appendChild(divPontos)
 
+
         let pPontos=document.createElement('p')
         pPontos.id=`pontuacao${c}`
         pPontos.innerText="00"
         divPontos.appendChild(pPontos)
+
+       /* let vencedor=document.createElement('div')
+        divKills.className='tabela1 PtOpt'
+        divColor.appendChild(divKills)
+
+        let pkills=document.createElement('p')
+        pkills.id=`kills${c}`
+        pkills.innerText='00'
+        divKills.appendChild(pkills)*/
 
         topicos.appendChild(divTime) 
     }
@@ -64,7 +70,12 @@ function ler_dados() {
         criar_placar(dados['Quantidade'])
         for (c=0;c<quantidade;c++){
             let nome=document.querySelector(`#nomeLine${c+1}`)
-            nome.innerHTML=dados['Jogadores'][c]
+            let kill=document.querySelector(`#kills${c+1}`)
+            let ponto=document.querySelector(`#pontuacao${c+1}`)
+            
+            nome.innerHTML=dados['Jogadores'][c]["Nome"]
+            kill.innerText=dados['Jogadores'][c]['Kill']
+            ponto.innerText=dados['Jogadores'][c]['Pontos']
         }
     })
 }

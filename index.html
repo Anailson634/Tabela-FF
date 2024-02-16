@@ -1,33 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel</title>
+    <style>
+        #lista-De-Usuarios {
+            height: 100px;
+            width: 100px;
+            border: 1px solid;
+            overflow: scroll;
+        }
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #editContainer {
+            border: 1px solid;            
+        } #editTable {
+            display: flex;
+            border: 1px solid;
+        } #editInput {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid;            
+        }
+        #editInput > input {
+            margin: 1px;
+        }
+        #editInput > p {
+            margin: 15px 1px 1px 1px;
+        }
+    </style>
 </head>
 <body>
-    <textarea id="jogadores" cols="30" rows="10">
+    <div id="container">
+        
+        <div id="enviar-us">
+            <textarea id="jogadores" cols="30" rows="10">
+            </textarea>
+        </div>
 
-    </textarea>
-    <div id="Enviar" onclick="enviar_dados()">
-        Enviar
+        <div id="editContainer">
+            <div id="editTable">
+                <ol id="lista-De-Usuarios">
+                </ol>
+                <div id="editInput">
+                    <p>KILLs</p>
+                    <input type="number" value="0" id="kills">
+                    <p>
+                        PONTOS
+                    </p>
+                    <input type="number" value="0" id="pontos">
+                </div>
+            </div>
+            <div class="botao" onclick="pontuar()">
+                Pontuar
+            </div>
+        </div>
     </div>
 
-    <script>
-        var jgs=document.querySelector("#jogadores")
-        jgs.value=''
-
-        function enviar_dados() {
-            const list_jgs=jgs.value.split('\n')
-            fetch("http://127.0.0.1:5000", {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({'Jogadores': list_jgs, "Quantidade": list_jgs.length})
-            })
-        }
-    </script>
+    <script src="painel-back.js"></script>
 </body>
 </html>
