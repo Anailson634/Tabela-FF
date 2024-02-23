@@ -49,15 +49,6 @@ function criar_placar(qnt){
         pPontos.innerText="00"
         divPontos.appendChild(pPontos)
 
-       /* let vencedor=document.createElement('div')
-        divKills.className='tabela1 PtOpt'
-        divColor.appendChild(divKills)
-
-        let pkills=document.createElement('p')
-        pkills.id=`kills${c}`
-        pkills.innerText='00'
-        divKills.appendChild(pkills)*/
-
         topicos.appendChild(divTime) 
     }
 }
